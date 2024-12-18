@@ -8,7 +8,7 @@ karyotype_data$color[karyotype_data$gieStain == "gpos50"] = "grey50"
 karyotype_data$color[karyotype_data$gieStain == "gpos75"] = "grey25"
 karyotype_data$color[karyotype_data$gieStain == "gpos100"] = "grey0"
 karyotype_data$color[karyotype_data$gieStain == "acen"] = "red"
-gene_coord = read.table("Homo_sapiens.GRCh38.93.gene.coord_strand_name.bed", header=F, sep="\t"); head(gene_coord)
+gene_coord = read_tsv("Homo_sapiens.GRCh38.93.gene.coord_strand_name.bed"); head(gene_coord)
 names(gene_coord) = c("chr", "start", "end", "strand", "gene")
 
 #HG19
@@ -21,7 +21,7 @@ karyotype_data_hg19$color[karyotype_data_hg19$gieStain == "gpos50"] = "grey50"
 karyotype_data_hg19$color[karyotype_data_hg19$gieStain == "gpos75"] = "grey25"
 karyotype_data_hg19$color[karyotype_data_hg19$gieStain == "gpos100"] = "grey0"
 karyotype_data_hg19$color[karyotype_data_hg19$gieStain == "acen"] = "red"
-gene_coord_hg19 = read.table("Homo_sapiens.GRCh37.87.genes.bed", header=F, sep="\t")
+gene_coord_hg19 = read_tsv("Homo_sapiens.GRCh37.87.genes.bed")
 names(gene_coord_hg19) = c("chr", "start", "end", "gene")
 gene_coord_hg19$chr <- paste0("chr", gene_coord_hg19$chr)
 
