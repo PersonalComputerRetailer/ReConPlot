@@ -498,7 +498,7 @@ ReConPlot <- function(sv,
   lower_limit_karyotype=upper_limit_karyotype-(max_y_rectagle*karyotype_rel_size)
   p = p + geom_rect(data=karyotype_data_now,
                     mapping = aes(xmin = start, xmax = end, ymin = lower_limit_karyotype, ymax = upper_limit_karyotype, group=chr), # can change the default values for karyotype
-                    fill = karyotype_data_now$color, color="black",size=.1)
+                    fill = karyotype_data_now$color, color="black",linewidth=.1)
 
    chromosome_labeller <- function(chr, value){
      chrm_name=gsub("chr", "", chr)
@@ -558,7 +558,7 @@ ReConPlot <- function(sv,
       strip.text.x = element_text(size=size_chr_labels, face="bold"), #element_blank(), ## to remove the title of the facet panels
       strip.switch.pad.grid = unit(0, "cm"),
       # explicitly set the horizontal lines (or they will disappear too)
-      panel.grid.major.y = element_line( size=.05, color="black"),
+      panel.grid.major.y = element_line( linewidth=.05, color="black"),
       panel.border = element_blank() #rect(colour = "black", fill=NA, size=.1)
     ) +
     labs(x = "", y = "Copy number")  +
@@ -937,12 +937,12 @@ ReConPlot <- function(sv,
             geom_curve(data = data.frame(cov = 1, chr = gene_coord_now$chr),
                        x=gene_coord_now$start, xend=gene_coord_now$start,
                        y=0, #max_y_svs_2 + (max_y_svs_3-max_y_svs_2)/2,
-                       yend=max_y_svs_3-size_interchr_SV_tip, curvature=0,  size=0.25, colour="green",alpha=.75) +
+                       yend=max_y_svs_3-size_interchr_SV_tip, curvature=0,  linewidth=0.25, colour="green",alpha=.75) +
             geom_rect(data = data.frame(cov = 1, chr = gene_coord_now$chr),
                       xmin=gene_coord_now$start, xmax=gene_coord_now$end,
                       ymin=0, #max_y_svs_2 + (max_y_svs_3-max_y_svs_2)/2,
                       ymax=max_y_svs_3-size_interchr_SV_tip,
-                      size=0.25, fill = "green", alpha=.6)
+                      linewidth=0.25, fill = "green", alpha=.6)
           
           
           # # add text annotation
@@ -1046,10 +1046,10 @@ ReConPlot <- function(sv,
           axis.title.x = element_blank(),
           axis.title.y = element_text(size=size_text, colour="black"),
           axis.text.y=element_text(size=size_text, colour="black"),
-          axis.line =  element_line(colour = "black", size=.25),
+          axis.line =  element_line(colour = "black", linewidth=.25),
           panel.background = element_blank(),
           panel.border = element_rect(colour = "black", fill=NA, size=.25),
-          panel.grid.major.y=element_line( size=.01, color="gray"),
+          panel.grid.major.y=element_line( linewidth=.01, color="gray"),
           strip.background = element_blank(),
           strip.placement = "outside",
           plot.margin = unit(c(0, 0, 0, 0), "cm"),
