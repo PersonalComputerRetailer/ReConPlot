@@ -95,3 +95,39 @@ For advanced usage, please visit the [tutorial](Tutorial/tutorial.pdf).
 If you have any comments or suggestions please raise an issue or contact us:\
 Jose Espejo Valle-Inclan: jespejo@ebi.ac.uk\
 Isidro Cortes-Ciriano: icortes@ebi.ac.uk
+
+---
+
+# ReConPlot GUI (v2)
+This feature allowed you to use ReConPlot without codes. *2025.11.23*
+
+![UI](img/shinyApp/img/example_UI.PNG)
+
+Prerequisites :
+1. [R](https://cran.r-project.org/) 
+2. [Rtools](https://cran.r-project.org/bin/windows/) (only for Windows users)
+3. [Rstudio](https://posit.co/downloads/)
+
+To start ReConPlot GUI:
+1. In the root folder of ReConPlot, right click the icon of `GO_ReConPlotGUI.r`. Choose Open With RStudio.
+2. Once you open it with RStudio. Hit the <span style="color: green;">green arrow</span> button "Run App" or "Run Shiny App"
+
+NOTE 1: For first-time users, this app will start to install required packages. It may take 20 min.
+
+NOTE 2: When it prompts `Update all/some/none? [a/s/n]:` type `a` followed by `Enter` to continue.
+
+NOTE 3: Sometimes, a dialog prompts asking your permission to update packages. Hit *Yes* to continue.
+
+NOTE 4: You may encounter errors when installing `VariantAnnotation`. This is caused by mmissing some of the compiled packages in the first round of installation. Simply hit <span style="color: green;">green arrow</span> to rerun again. It should solve the issue.
+
+7. Once all the packages are installed, this App will open in a brower. If it doesn't, open your browser and enter to local host http://127.0.0.1:7858
+
+8. In the App, you need to provide your copy number segment files (with suffix `.called.seg`) and structural variant VCF files (with suffix `.somatic.vcf` ) (refer `test` folder for you testing). Change interested locus and size of output PDF  as you like, then hit Run ReConPlot. You can click download the pdf to get your result.
+
+Some Ubuntu user may need to install additional lib to install `VariantAnnotation`.
+```
+sudo apt-get install libpng-dev
+brew install libconfig
+sudo apt-get install libcurl4-openssl-dev
+```
+
