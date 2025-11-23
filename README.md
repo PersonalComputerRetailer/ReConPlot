@@ -122,7 +122,7 @@ NOTE 4: You may encounter errors when installing `VariantAnnotation`. This is ca
 
 7. Once all the packages are installed, this App will open in a brower. If it doesn't, open your browser and enter to local host http://127.0.0.1:7858
 
-8. In the App, you need to provide your copy number segment files (with suffix `.called.seg`) and structural variant VCF files (with suffix `.somatic.vcf` ) (refer `test` folder for you testing). Change interested locus and size of output PDF  as you like, then hit Run ReConPlot. You can click download the pdf to get your result.
+8. In the App, you need to provide your copy number segment files (with suffix `.seg`) and structural variant VCF files (with suffix `.vcf` ). Change the interested locus and size of output PDF as you like, then hit Run ReConPlot. You can click download the pdf to get your result.
 
 Some Ubuntu user may need to install additional lib to install `VariantAnnotation`.
 ```
